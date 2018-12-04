@@ -4,7 +4,7 @@ title: "Project - Node Guidebook"
 author: "Kwabena Boadu"
 categories: journal
 tags: [javascript,node,guidebook,api]
-image: guide.jpg
+image: guide.png
 ---
 
 In September of 2018, I started mentoring a junior developer to build a NodeJS API using [Express framework](https://expressjs.com). Among other things, my mentee struggled with defining the project structure, testing (unit versus integration) and managing configuration.
