@@ -7,9 +7,9 @@ tags: [javascript,node,guidebook,api]
 image: guide.png
 ---
 
-In September of 2018, I started mentoring a junior developer to build a NodeJS API using [Express framework](https://expressjs.com). Among other things, my mentee struggled with defining the project structure, testing (unit versus integration) and managing configuration.
+In September of 2018, I started mentoring a junior developer to build a NodeJS API using [Express framework](https://expressjs.com){:target="_blank"}. Among other things, my mentee struggled with defining the project structure, testing (unit versus integration) and managing configuration.
 
-While helping him resolve some of these challenges, it hit me to build a NodeJS API project that teaches some of these fundamentals. I decided to call this project [Node Guidebook](https://github.com/biblicalph/guidebook).
+While helping him resolve some of these challenges, it hit me to build a NodeJS API project that teaches some of these fundamentals. I decided to call this project [Node Guidebook](https://github.com/biblicalph/guidebook){:target="_blank"}.
 
 The aim of the project is to teach, via a fully working sample example, how to build a NodeJS production ready API. The project covers among other things:
 
