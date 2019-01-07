@@ -6,7 +6,7 @@ categories: journal
 tags: [javascript,node,nodejs,guidebook,lint,linter,airbnb,eslint,prettier,husky]
 ---
 
-This is the second part of a 2-series article in which I talk about setting up a NodeJS project. The [first artice](https://biblicalph.github.io/journal/es6-modules-in-nodejs.html){:target="_blank"} focused on using ES6 modules in NodeJS. This article dives into enforcing a consistent code format and style in a NodeJS project.
+This is the second part of a 2-series article in which I talk about setting up a NodeJS project. The [first article](https://biblicalph.github.io/journal/es6-modules-in-nodejs.html){:target="_blank"} focused on using ES6 modules in NodeJS. This article dives into enforcing a consistent code format and style in a NodeJS project.
 
 ## Why Enforce a Code Format and Style?
 In any project, private or public, with more than one contributor, misunderstandings are likely to occur over how code should be formatted and generally written. This is why it is important to define a coding style and format at the very start of a project. To define a coding style, you use a linter.
