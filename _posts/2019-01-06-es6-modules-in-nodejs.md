@@ -78,7 +78,7 @@ export const divide = a => b => {
 }
 ```
 `index.js`
-```
+```js
 import { sum, prod, divide } from './math.js'
 
 console.log('sum of %d and %d = %d', 8, 10, sum(8)(10));
