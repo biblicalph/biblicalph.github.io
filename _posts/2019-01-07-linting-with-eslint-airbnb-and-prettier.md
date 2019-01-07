@@ -11,19 +11,19 @@ This is the second part of a 2-series article in which I talk about setting up a
 ## Why Enforce a Code Format and Style?
 In any project, private or public, with more than one contributor, misunderstandings are likely to occur over how code should be formatted and generally written. This is why it is important to define a coding style and format at the very start of a project. To define a coding style, you use a linter.
 
-> A linter refers to a tool that analyzes source code to flag programming errors, bugs, stylistic errors and suspicious constructs - [Wikipedia](https://en.wikipedia.org/wiki/Lint_(software))
+> A linter refers to a tool that analyzes source code to flag programming errors, bugs, stylistic errors and suspicious constructs - [Wikipedia](https://en.wikipedia.org/wiki/Lint_(software)){:target="_blank"}
 
-You can read more about the benefits of linting in [does linting make you a better developer](https://medium.com/chingu/does-linting-make-you-a-better-developer-c9c0f382aaf0) and [why you should always use a linter](https://medium.com/dailyjs/why-you-should-always-use-a-linter-and-or-pretty-formatter-bb5471115a76).
+You can read more about the benefits of linting in [does linting make you a better developer](https://medium.com/chingu/does-linting-make-you-a-better-developer-c9c0f382aaf0){:target="_blank"} and [why you should always use a linter](https://medium.com/dailyjs/why-you-should-always-use-a-linter-and-or-pretty-formatter-bb5471115a76){:target="_blank"}.
 
 ## Setting Up a Linter
-We'll be setting up [eslint](https://eslint.org/), a linting utility for Javascript, for the project started in the first part of this article. 
-Eslint allows you to define a set of rules to enforce a coding style and format. For our purposes, we will be using the [Airbnb style guide](https://github.com/airbnb/javascript), a set of rules defined and used by the Airbnb team. The Airbnb guide is comprehensive and covers everything from variable declarations to functions and control flow statements. Let's begin.
+We'll be setting up [eslint](https://eslint.org/){:target="_blank"}, a linting utility for Javascript, for the project started in the first part of this article. 
+Eslint allows you to define a set of rules to enforce a coding style and format. For our purposes, we will be using the [Airbnb style guide](https://github.com/airbnb/javascript){:target="_blank"}, a set of rules defined and used by the Airbnb team. The Airbnb guide is comprehensive and covers everything from variable declarations to functions and control flow statements. Let's begin.
 
 1. Install eslint
 ```
 npm install eslint eslint-plugin-import --save-dev
 ```
-2. Create a `.eslintrc.js` file, the eslint configuration file, with the following content. Note: the configuration file can be a [javascript, json or yaml](https://eslint.org/docs/user-guide/configuring) file.
+2. Create a `.eslintrc.js` file, the eslint configuration file, with the following content. Note: the configuration file can be a [javascript, json or yaml](https://eslint.org/docs/user-guide/configuring){:target="_blank"} file.
 
 `.eslintrc.js`
 ```
@@ -61,7 +61,7 @@ scripts: {
 ```
 The `lint` command runs the linter and reports any errors found. The `lint:fix` command runs the linter and fixes all errors that don't require an intervention from you - example, adding missing semicolons.
 Note: eslint comes with a default set of rules which are used when we run lint. Instead of using the eslint defaults, let's use the Airbnb style guide.
-5. Install [Airbnb's rules for eslint](https://github.com/airbnb/javascript)
+5. Install [Airbnb's rules for eslint](https://github.com/airbnb/javascript){:target="_blank"}
 ```
 npm install eslint-config-airbnb-base
 ```
@@ -80,15 +80,15 @@ npm install eslint-import-plugin --save-dev
 
 We have successfully set up a linter for our project. Every contributor can run the lint commands to either lint or fix lint errors. At this point, we can configure our continuous integration (CI) pipeline to run the lint command. This will help us report lint errors before a pull request gets merged.
 
-Even though we have done well so far, wecan do more to make local development for individual contributors much easier. 
+Even though we have done well so far, we can do more to make local development for individual contributors much easier. 
 We can automate running of the linter such that a contributor can afford to "forget" manually running it. This way, even if a contributor forgets to lint, the linter is automatically run allowing him/her to attend to lint errors instead of waiting a while to be notified by the CI. We'll automate this by setting up Git hooks.
 
 ## Setting Up Git Hooks
-1. Install [husky](https://www.npmjs.com/package/husky), a module for managing git hooks in NodeJS
+1. Install [husky](https://www.npmjs.com/package/husky){:target="_blank"}, a module for managing git hooks in NodeJS
 ```
 npm install husky--save-dev
 ```
-2. Install [lint-staged](https://www.npmjs.com/package/lint-staged), a module for running linters against staged git files
+2. Install [lint-staged](https://www.npmjs.com/package/lint-staged){:target="_blank"}, a module for running linters against staged git files
 ```
 npm install lint-staged --save-dev
 ```
@@ -110,11 +110,11 @@ npm install lint-staged --save-dev
 Anytime a contributor attempts to commit changes, the linter is run to fix all lint errors (those that can be fixed without intervention) before the files are  committed. Similarly, prior to pushing up a branch, the linter is run and any lint errors are reported to the contributor.
 
 ## Bonus
-We have done a great job so far in terms of enforcing a consistent coding style and format. However, let's do a little more to make it easier to enforce consistent code formatting. Meet [prettier](https://prettier.io/docs/en/index.html), an opinionated code formatter that takes the burden off the developer as relates to code formatting. We'll use prettier to ensure that code is properly formatted before it is pushed to the main repo.
+We have done a great job so far in terms of enforcing a consistent coding style and format. However, let's do a little more to make it easier to enforce consistent code formatting. Meet [prettier](https://prettier.io/docs/en/index.html){:target="_blank"}, an opinionated code formatter that takes the burden off the developer as relates to code formatting. We'll use prettier to ensure that code is properly formatted before it is pushed to the main repo.
 
 1. Install prettier
 `npm install prettier --save-dev`
-2. Install prettier plugins for eslint. See [integrating prettier with eslint](https://prettier.io/docs/en/eslint.html) for details
+2. Install prettier plugins for eslint. See [integrating prettier with eslint](https://prettier.io/docs/en/eslint.html){:target="_blank"} for details
 ```
 npm install eslint-plugin-prettier eslint-config-prettier --save-dev
 ```

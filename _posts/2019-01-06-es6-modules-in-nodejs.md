@@ -6,7 +6,7 @@ categories: journal
 tags: [javascript,node,guidebook,lint,babel,nodemon,es6,modules]
 ---
 
-While working on [Node Guidebook](https://github.com/biblicalph/guidebook){:target="_blank"}, a project I started to share my thoughts on building NodeJS applications, I needed to answers a couple of questions.
+While working on [Node Guidebook](https://github.com/biblicalph/guidebook){:target="_blank"}{:target="_blank"}, a project I started to share my thoughts on building NodeJS applications, I needed to answers a couple of questions.
 
 1. Which do I use? `commonjs` (aka `module.exports` and `require`) or the new ES6 modules? 
 Note: As at NodeJS v11, ES6 modules are not  supported in NodeJS.
@@ -15,8 +15,12 @@ Note: As at NodeJS v11, ES6 modules are not  supported in NodeJS.
 ## Commonjs or ES6 Modules?
 I decided to go with ES6 modules for Guidebook as it is the future of module management in Javascript. 
 I also decided to not use `--experimental-modules` NodeJS flag - I personally don't like the `.mjs` extensions required to use it.
-As a result, I chose to write ES6 modules code and compile down to ES5 `commonjs` code using [babel](https://babeljs.io/). 
-This seems rather counterintuitive - why not use `commonjs` modules directly and skip the compile step? Well, I reasoned that sometime in the near future, ES6 modules will be fully supported in NodeJS. When that day arrives, I can safely remove `babel` and not have to touch any of my code. 
+As a result, I chose to write ES6 modules code and compile down to ES5 `commonjs` code using [babel](https://babeljs.io/){:target="_blank"}. 
+This seems rather counterintuitive. Why not use `commonjs` modules directly and skip the compile step? Well, I reasoned that sometime in the near future, ES6 modules will be fully supported in NodeJS. When that day arrives, I can safely remove `babel` and not have to touch any of my code. 
+
+### A Gist About Babel
+[Babel](https://babeljs.io/docs/en/){:target="_blank"} is a piece of software used to transform ES6+ code into a backwards compatible version. Code transformation in babel is achieved through the use of small Javascript programs called [plugins](https://babeljs.io/docs/en/usage){:target="_blank"}. For example, the [@babel/plugin-transform-arrow-functions](https://babeljs.io/docs/en/babel-plugin-transform-arrow-functions){:target="_blank"} transforms ES6+ arrow functions to ES5 functions. To transform code, you simply specify the list of plugins to apply to it. 
+To simplify the process of using multiple plugins, babel provides presets. A [preset](https://babeljs.io/docs/en/usage){:target="_blank"} is a pre-determined collection of plugins. For example, the [env preset](https://babeljs.io/docs/en/presets){:target="_blank"} includes all the plugins required to transform modern Javascript (ES6+) into a backwards compatible version.
 
 ### Setting Up Babel
 1. Create a new directory for the ES6 modules app
@@ -34,7 +38,7 @@ Note: You can run `npm init` and follow the on-screen prompts to setup a `packag
 npm install --save-dev babel-cli babel-preset-env nodemon
 ```
 Note: `nodemon` will be used to start a development server that reloads anytime we make code changes
-3. Create `.babelrc` file - the babel configuration file, with the following contents
+3. Create `.babelrc` file - the babel configuration file, with the following content
 ```
 {
   "presets": [ "env" ]
@@ -84,7 +88,7 @@ console.log('product of %d and %d = %d', 6, 5, prod(6)(5));
 console.log('%d divided by %d = %d', 22, 5, divide(22)(5));
 ```
 
-To start the development server, run `npm run start:dev`. While the server is running, editing either `math.js` or `index.js` reloads the server.
-To deploy your chances to production, run `npm run build` - this creates a `dist` directory which can be deployed to the production server.
+To start the application, run `npm run start:dev`. While the application is running, editing either `math.js` or `index.js` reloads it. That is, you don't have to stop and restart it.
+To deploy your changes to production, run `npm run build` - this creates a `dist` directory which can be deployed to the production server.
 
 Hope you enjoyed this article. See you in the follow up article. In the meantime, feel free to leave comments and suggestions. 
