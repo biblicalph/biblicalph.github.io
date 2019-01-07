@@ -37,9 +37,7 @@ Note: `nodemon` will be used to start a development server that reloads anytime 
 3. Create `.babelrc` file - the babel configuration file, with the following contents
 ```
 {
-  "presets": [
-    "env"
-  ]
+  "presets": [ "env" ]
 }
 ```
 4. Add `build` and `start` commands to `package.json`. Your package.json file should look something like this
