@@ -67,6 +67,7 @@ The build command will compile code from our source directory, `src` and output 
 5. Create a `src` directory
 `mkdir src`
 6. Create the following files with their contents
+
 `math.js`
 ```js
 export const sum = a => b => a + b
