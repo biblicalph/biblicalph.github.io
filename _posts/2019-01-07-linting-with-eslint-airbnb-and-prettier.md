@@ -50,6 +50,7 @@ dist/
 node_modules/
 ```
 This file tells eslint to not lint files in the `dist` and `node_modules` directory. This is important because `dist` contains the output of babel compilation and we didn't write any of the code in the `node_modules` directory.
+
 4. Add lint commands to `package.json`
 ```
 ...
@@ -61,6 +62,7 @@ scripts: {
 ```
 The `lint` command runs the linter and reports any errors found. The `lint:fix` command runs the linter and fixes all errors that don't require an intervention from you - example, adding missing semicolons.
 Note: eslint comes with a default set of rules which are used when we run lint. Instead of using the eslint defaults, let's use the Airbnb style guide.
+
 5. Install [Airbnb's rules for eslint](https://github.com/airbnb/javascript){:target="_blank"}
 ```
 npm install eslint-config-airbnb-base
@@ -125,7 +127,7 @@ extends: ["airbnb-base", "plugin:prettier/recommended"]
 
 Prettier will now be run each time you run `npm run lint:fix`. Since lint fix is run prior to each commit, you can be sure that prettier will always be invoked to format your code.
 
-Congratulations on making it to the end of this article. I hope you have enjoyed yourself as much as I. At this point, your `package.json`, `.eslintrc.js` and `.eslintignore` files should be looking as below. Be sure to consult these files in case you missed anytime. Until next time, cheers.
+Congratulations on making it to the end of this article. I hope you have enjoyed yourself as much as I. At this point, your `package.json`, `.eslintrc.js` and `.eslintignore` files should be looking as below (exact package versions may differ). Be sure to consult these files in case you missed anytime. Until next time, cheers.
 
 `package.json` 
 ```json
@@ -139,14 +141,17 @@ Congratulations on making it to the end of this article. I hope you have enjoyed
     "build": "babel src -d dist",
     "start": "node dist/index.js",
     "start:dev": "nodemon src/index.js --exec babel-node",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "lint:fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -170,7 +175,6 @@ Congratulations on making it to the end of this article. I hope you have enjoyed
     ]
   }
 }
-
 ```
 `.eslintrc.js`
 ```js
