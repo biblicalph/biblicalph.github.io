@@ -19,7 +19,7 @@
 
 body {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
-  font-size: 18px;
+  font-size: 19px;
   color: #515151;
   line-height: 1.75rem;
 }
@@ -284,7 +284,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: .9rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
