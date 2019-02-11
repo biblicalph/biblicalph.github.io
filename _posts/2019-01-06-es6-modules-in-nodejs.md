@@ -23,25 +23,25 @@ This seems rather counterintuitive. Why not use `commonjs` modules directly and 
 To simplify the process of using multiple plugins, babel provides presets. A [preset](https://babeljs.io/docs/en/usage){:target="_blank"} is a pre-determined collection of plugins. For example, the [env preset](https://babeljs.io/docs/en/presets){:target="_blank"} includes all the plugins required to transform modern Javascript (ES6+) into a backwards compatible version.
 
 ### Setting Up Babel 
-1. Create a new directory for the ES6 modules app
+1. Create a new directory for the ES6 modules app 
 ```
 mkdir es6-modules-app
 cd es6-modules-app
 ```
-2. Create a `package.json` file
+2. Create a `package.json` file 
 ```
 npm init -y
 ```
 Note: You can run `npm init` instead and follow the on-screen prompts to setup a `package.json` file.
 
-3. Install babel and nodemon
+3. Install babel and nodemon 
 ```
 npm install @babel/cli @babel/core @babel/node @babel/preset-env nodemon --save-dev
 ```
 Note: [nodemon](https://www.npmjs.com/package/nodemon) is a tool used to start [NodeJS](https://nodejs.org){:target="_blank"} applications. It restarts the application when file changes in the application source directory are detected.
 
 4. Create `.babelrc` file, the babel configuration file, with the following content
-```
+```json
 {
   "presets": [
     "@babel/env", 
@@ -54,9 +54,8 @@ Note: [nodemon](https://www.npmjs.com/package/nodemon) is a tool used to start [
   ]
 }
 ```
-`"modules": "commonjs"` tells babel to transform ES6 modules to commonjs. 
-`{ "targets": { "node": "8" } }` tells babel to compile against node 8. To compile agains the current version of node, specify `{ "targets": { "node": true } }`. 
-Learn more about `env` preset options [here](https://babeljs.io/docs/en/babel-preset-env){_target="_blank"}
+`"modules": "commonjs"` tells babel to transform ES6 modules to commonjs.<br/>
+`{ "targets": { "node": "8" } }` tells babel to compile against node 8. To compile against the current version of node, specify `{ "targets": { "node": true } }`. Learn more about `env` preset options [here](https://babeljs.io/docs/en/babel-preset-env){:target="_blank"}
 4. Add `build` and `start` commands to scripts section of `package.json`.
 
 Your package.json file should look something like this. Note, however, that package version numbers may differ.

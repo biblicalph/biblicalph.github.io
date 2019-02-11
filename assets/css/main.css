@@ -82,7 +82,7 @@ hr {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 615px;
+  width: 900px;
 }
 
 /*48em*/
@@ -498,4 +498,21 @@ th, td {
 
 .fa-rss-square:hover {
 	color: #ff6600;
+}
+
+ol > li {
+  padding-bottom: 0.85em;
+}
+
+ol img {
+  margin-top: 0.5em;
+  display: block;
+}
+
+ol p {
+  margin-bottom: 0;
+}
+
+ol div.highlight {
+  margin-bottom: 0;
 }

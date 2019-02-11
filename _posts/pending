@@ -1,0 +1,24 @@
+Setting Up CircleCI CLI
+Command line interface that can be used locally from a terminal. 
+We'll be using it primarily to:
+1. Debug and validate the CI config
+2. Run jobs locally
+
+To install, visit [https://circleci.com/docs/2.0/local-cli/](https://circleci.com/docs/2.0/local-cli/){:target="_blank"}
+
+To validate a config, run `circleci validate <path-to-config>`
+If `<path-to-config>` is omitted, the CLI will look for a config file in `.circleci` 
+directory in the current directory.
+
+To run jobs locally, you need to setup an access token that will be used by the CLI 
+to access builds.
+To generate an access token, login to CircleCI and visit [https://circleci.com/account/api](https://circleci.com/account/api){:target="_blank"}
+
+Next setup the CLI to use the access token - `circleci setup`.
+Paste your personal access token and accept the default CircleCI host
+
+Install docker - a requirement for running local jobs.
+To run builds locally, run `circleci local execute --job <name-of-job>`
+
+As of this writing, the CLI allows you to run a single job at a time using docker.
+See [limitations of running local jobs](https://circleci.com/docs/2.0/local-cli/#limitations-of-running-jobs-locally){:target="_blank"}

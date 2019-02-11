@@ -24,8 +24,6 @@ Eslint allows you to define a set of rules to enforce a coding style and format.
 npm install eslint eslint-plugin-import --save-dev
 ```
 2. Create a `.eslintrc.js` file, the eslint configuration file, with the following content. Note: the configuration file can be a [javascript, json or yaml](https://eslint.org/docs/user-guide/configuring){:target="_blank"} file.
-
-`.eslintrc.js`
 ```
 module.exports = {
   env: {
@@ -42,15 +40,12 @@ module.exports = {
   }
 }
 ```
-3. Create a `.eslintignore` file with the following content. 
-
-`.eslintignore`
+3. Create a `.eslintignore` file with the following content.
 ```
 dist/
 node_modules/
 ```
 This file tells eslint to not lint files in the `dist` and `node_modules` directory. This is important because `dist` contains the output of babel compilation and we didn't write any of the code in the `node_modules` directory.
-
 4. Add lint commands to `package.json`
 ```
 ...
@@ -60,25 +55,18 @@ scripts: {
   "lint:fix": "npm run lint -- --fix"
 }
 ```
-The `lint` command runs the linter and reports any errors found. The `lint:fix` command runs the linter and fixes all errors that don't require an intervention from you - example, adding missing semicolons.
-Note: eslint comes with a default set of rules which are used when we run lint. Instead of using the eslint defaults, let's use the Airbnb style guide.
-
-5. Install [Airbnb's rules for eslint](https://github.com/airbnb/javascript){:target="_blank"}
-```
+The `lint` command runs the linter and reports any errors found. The `lint:fix` command runs the linter and fixes all errors that don't require an intervention from you - example, adding missing semicolons. <br/>Note: eslint comes with a default set of rules which are used when we run lint. Instead of using the eslint defaults, let's use the Airbnb style guide.
+5. Install [Airbnb's rules for eslint](https://github.com/airbnb/javascript){:target="_blank"}```
 npm install eslint-config-airbnb-base
 ```
 6. Add the Airbnb config to the plugins (rules) checked by eslint
-`.eslintrc.js`
 ```
 extends: ["airbnb-base"]
 ```
 7. Run `npm run lint`. You should get an error saying eslint is unable to understand import/export syntax. To fix this, install the import plugin
 ```
 npm install eslint-import-plugin --save-dev
-```
-`npm run lint` should now work as expected; it displays a list of errors as shown below:
-
-![Lint Error](../assets/img/lint-error-1.png "Lint Error")
+``` <br/>`npm run lint` should now work as expected; it displays a list of errors as shown below: <br/>![Lint Error](../assets/img/lint-error-1.png "Lint Error")
 
 We have successfully set up a linter for our project. Every contributor can run the lint commands to either lint or fix lint errors. At this point, we can configure our continuous integration (CI) pipeline to run the lint command. This will help us report lint errors before a pull request gets merged.
 
