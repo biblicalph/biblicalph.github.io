@@ -16,14 +16,18 @@ paginate:            5
 # Build settings
 markdown:            kramdown
 highlighter:         rouge
-permalink:           none
+permalink:           /:title
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'biblicalph'
-description:	       'my thoughts and more'
-author:              'Kwabena Boadu'
+title:             'biblicalph'
+subtitle:          'an attempt to capture my learnings'
+description:       'Join me on an educational journey as I delve into daily work and personal projects, exploring diverse topics such as programming languages, DevOps, testing, performance enhancements, security, and more.'
+author:            'Kwabena Boadu'
+  
 
+# github:
+#   url: https://github.com/biblicalph
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
 #  path: rss-feed.xml
